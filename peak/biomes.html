@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#101719"><title>BIOME DESIGN — PEAK</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="peak.css"><link rel="stylesheet" href="biomes.css"></head>
-<body><div class="site-shell"><header class="topbar"><a class="wordmark" href="../index.html"><span class="wordmark-mark">G.</span> SIMULATORS</a><nav><span class="nav-link active">PEAK / NEW SEASON</span><a class="nav-link" href="index.html">EXIT SETUP</a></nav></header><main class="biome-page"><div class="progress-line"><span>01 / 05</span><div><i style="width:40%"></i></div><span>BIOME DESIGN</span></div><a class="back-link" href="index.html">← PREVIOUS STEP</a><div class="setup-heading"><p class="eyebrow">EXPEDITION BUILDER / STEP 02</p><h1>CHART YOUR<br><span>COURSE.</span></h1><p>Choose the route your climbers will face. Some paths are straightforward. Others lead somewhere a little more dangerous.</p></div><div class="route-list">
-<div class="route-stop fixed"><div class="route-number">01</div><div class="route-info"><small>STARTING BIOME / FIXED</small><h2>SHORE</h2><p>Every expedition begins here.</p></div><span class="fixed-tag">LOCKED IN</span></div>
-<div class="route-stop"><div class="route-number">02</div><div class="route-info"><small>CHOOSE ONE</small><h2 id="secondTitle">TROPICS</h2><p id="secondDescription">A dense, humid stretch of wilderness.</p><div class="choice-row"><button class="biome-choice selected" data-slot="second" data-value="tropics">TROPICS</button><button class="biome-choice" data-slot="second" data-value="roots">ROOTS</button></div></div></div>
-<div class="route-stop"><div class="route-number">03</div><div class="route-info"><small>CHOOSE ONE</small><h2 id="thirdTitle">MESA</h2><p id="thirdDescription">An exposed landscape of stone and heat.</p><div class="choice-row"><button class="biome-choice selected" data-slot="third" data-value="mesa">MESA</button><button class="biome-choice" data-slot="third" data-value="alpine">ALPINE</button></div></div></div>
-<div class="route-stop"><div class="route-number">04</div><div class="route-info"><small>CHOOSE ONE / DETERMINES THE FINAL BIOME</small><h2 id="fourthTitle">GLOOM</h2><p id="fourthDescription">A dark, unsettling passage through the mountain.</p><div class="choice-row"><button class="biome-choice selected" data-slot="fourth" data-value="gloom">GLOOM</button><button class="biome-choice" data-slot="fourth" data-value="caldera">CALDERA</button></div></div></div>
-<div class="route-stop linked"><div class="route-number">05</div><div class="route-info"><small>LINKED BIOME / AUTOMATIC</small><h2 id="fifthTitle">THE CITADEL</h2><p id="fifthDescription">The route through the ancient stronghold.</p><span class="linked-tag">LINKED TO BIOME 04</span></div></div>
-<div class="route-stop fixed"><div class="route-number">06</div><div class="route-info"><small>FINAL DESTINATION / FIXED</small><h2>THE PEAK</h2><p>The summit. The end of the expedition.</p></div><span class="fixed-tag">LOCKED IN</span></div>
-</div><div class="biome-footer"><a class="text-button" href="index.html">← BACK</a><button class="primary-button" id="saveRoute">SAVE ROUTE & CONTINUE <span>→</span></button></div></main><footer><a class="wordmark" href="../index.html"><span class="wordmark-mark">G.</span> SIMULATORS</a><span>PEAK / SIMULATION 001</span><span>© 2026</span></footer></div><script src="biomes.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#151a18">
+<title>PEAK · Choose your route</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="peak.css">
+<link rel="stylesheet" href="biomes.css">
+</head>
+<body>
+<div class="page">
+<header class="header"><a class="brand" href="../index.html">SIMULATORS</a><a class="header-note" href="index.html">← SEASON DETAILS</a></header>
+<main class="biome-page">
+<div class="step-label"><span>STEP 2 OF 5</span><span>BIOME ROUTE</span></div>
+<section class="route-intro"><p class="kicker">EXPEDITION SETUP</p><h1>Choose your route</h1><p>Pick one biome at each fork. Your fourth choice determines the fifth biome.</p></section>
+<div class="route-list">
+<section class="route-row fixed"><div class="route-index">1</div><div class="route-content"><h2>Shore</h2><p>Starting biome · always included</p></div><span class="route-state">FIXED</span></section>
+<section class="route-row"><div class="route-index">2</div><div class="route-content"><h2>Second biome</h2><div class="choices"><button type="button" class="choice selected" data-slot="second" data-value="tropics" aria-pressed="true">Tropics</button><button type="button" class="choice" data-slot="second" data-value="roots" aria-pressed="false">Roots</button></div></div></section>
+<section class="route-row"><div class="route-index">3</div><div class="route-content"><h2>Third biome</h2><div class="choices"><button type="button" class="choice selected" data-slot="third" data-value="mesa" aria-pressed="true">Mesa</button><button type="button" class="choice" data-slot="third" data-value="alpine" aria-pressed="false">Alpine</button></div></div></section>
+<section class="route-row"><div class="route-index">4</div><div class="route-content"><h2>Fourth biome</h2><div class="choices"><button type="button" class="choice selected" data-slot="fourth" data-value="gloom" aria-pressed="true">Gloom</button><button type="button" class="choice" data-slot="fourth" data-value="caldera" aria-pressed="false">Caldera</button></div></div></section>
+<section class="route-row linked"><div class="route-index">5</div><div class="route-content"><h2 id="fifthTitle">The Citadel</h2><p id="fifthDescription">Automatically paired with Gloom.</p></div><span class="route-state">LINKED</span></section>
+<section class="route-row fixed"><div class="route-index">6</div><div class="route-content"><h2>The Peak</h2><p>Final destination · always included</p></div><span class="route-state">FIXED</span></section>
+</div>
+<div class="route-actions"><a class="back-button" href="index.html">Back</a><div><p class="save-message" id="saveMessage" role="status"></p><button class="button" id="saveRoute" type="button">Save route</button></div></div>
+</main>
+<footer><span>PEAK</span><span>SIMULATOR 001</span></footer>
+</div>
+<script src="biomes.js"></script>
+</body>
+</html>
