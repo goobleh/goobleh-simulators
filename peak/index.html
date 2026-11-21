@@ -1,7 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#101719"><title>PEAK — SIMULATORS</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="peak.css"></head>
-<body><div class="site-shell"><header class="topbar"><a class="wordmark" href="../index.html"><span class="wordmark-mark">G.</span> SIMULATORS</a><nav><a class="nav-link active" href="index.html">PEAK</a><a class="nav-link" href="../index.html#simulators">ALL SIMULATORS</a><button class="account-button" id="accountButton">ACCOUNT <span>↗</span></button></nav></header>
-<main><section class="peak-hero"><a class="back-link" href="../index.html">← BACK TO COLLECTION</a><div class="peak-hero-content"><p class="eyebrow"><span class="pulse"></span> SIMULATION NO. 001 / SURVIVAL</p><h1>PEAK<span>.</span></h1><p class="peak-subtitle">SIX BIOMES. ONE SUMMIT.<br>WHO MAKES IT TO THE TOP?</p><p class="peak-intro">A climbing expedition where every decision, relationship and encounter can change the outcome. Create your cast, customise the mountain, and watch the journey unfold.</p><button class="primary-button" id="startSetup">CREATE A SEASON <span>↗</span></button></div><div class="peak-mountain-art"><div class="peak-orb"></div><div class="peak-layer layer-a"></div><div class="peak-layer layer-b"></div><div class="peak-layer layer-c"></div><span class="altitude altitude-top">THE PEAK / 6</span><span class="altitude altitude-bottom">BASE CAMP / 0</span></div><div class="peak-facts"><div><span>01</span><strong>BUILD YOUR CAST</strong><small>Characters, classes & archetypes</small></div><div><span>02</span><strong>DESIGN THE ROUTE</strong><small>Choose biomes and add twists</small></div><div><span>03</span><strong>WATCH IT UNFOLD</strong><small>Events, relationships & survival</small></div></div></section>
-<section class="setup-section hidden" id="setupSection"><div class="setup-heading"><p class="eyebrow">NEW EXPEDITION / STEP 01 OF 05</p><h2>LET'S SET THE SCENE.</h2><p>Start with the basics. You can review everything before the expedition begins.</p></div><div class="setup-panel"><label for="seasonName">SEASON NAME</label><input id="seasonName" maxlength="50" placeholder="e.g. The Long Way Up" value="The Long Way Up"><div class="field-row"><div><label for="climberCount">NUMBER OF CLIMBERS</label><input id="climberCount" type="number" min="4" max="24" value="16"></div><div><label for="seasonMode">SIMULATION MODE</label><select id="seasonMode"><option value="standard">Standard expedition</option><option value="extended">Extended expedition</option></select></div></div><div class="setup-note"><span>i</span><p>PEAK always begins at <strong>SHORE</strong> and ends at <strong>THE PEAK</strong>. You'll design the four biomes in between on the next step.</p></div><div class="setup-actions"><button class="text-button" id="cancelSetup">CANCEL</button><button class="primary-button" id="continueSetup">CONTINUE TO BIOME DESIGN <span>→</span></button></div></div></section>
-</main><footer><a class="wordmark" href="../index.html"><span class="wordmark-mark">G.</span> SIMULATORS</a><span>PEAK / SIMULATION 001</span><span>© 2026</span></footer></div><div class="modal-backdrop hidden" id="accountModal"><div class="account-modal"><button class="modal-close" id="closeModal">×</button><p class="eyebrow">YOUR SIMULATOR PROFILE</p><h2>ACCOUNT ACCESS</h2><p>Account creation and cloud season storage are part of the next platform milestone.</p><span class="modal-status">COMING SOON</span></div></div><script src="peak.js"></script></body></html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#151a18">
+<title>PEAK</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="peak.css">
+</head>
+<body>
+<div class="page">
+<header class="header"><a class="brand" href="../index.html">SIMULATORS</a><a class="header-note" href="../index.html">← ALL GAMES</a></header>
+<main>
+<section class="peak-intro">
+<p class="kicker">SIMULATOR 001 / SURVIVAL</p>
+<h1>PEAK</h1>
+<p class="peak-summary">Six biomes. One summit. Who makes it to the top?</p>
+<p class="peak-description">Build an expedition, choose its route and follow a group of climbers as they make their way up the mountain.</p>
+<button class="button" id="startSetup" type="button">Create a season</button>
+</section>
+<section class="setup hidden" id="setupSection">
+<div class="section-heading"><div><p class="kicker">NEW SEASON · STEP 1 OF 5</p><h2>Season details</h2></div></div>
+<form id="seasonForm">
+<div class="field"><label for="seasonName">Season name</label><input id="seasonName" name="seasonName" maxlength="50" required value="The Long Way Up" autocomplete="off"></div>
+<div class="field"><label for="climberCount">Number of climbers</label><input id="climberCount" name="climberCount" type="number" min="4" max="24" required value="16"></div>
+<div class="field"><label for="seasonMode">Season length</label><select id="seasonMode" name="seasonMode"><option value="standard">Standard</option><option value="extended">Extended</option></select></div>
+<p class="form-help">Every route starts at Shore and ends at The Peak.</p>
+<div class="form-actions"><button class="button button-secondary" id="cancelSetup" type="button">Cancel</button><button class="button" type="submit">Continue to biomes →</button></div>
+<p class="form-error" id="formError" role="alert"></p>
+</form>
+</section>
+</main>
+<footer><span>PEAK</span><span>SIMULATOR 001</span></footer>
+</div>
+<script src="peak.js"></script>
+</body>
+</html>
