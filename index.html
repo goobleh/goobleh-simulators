@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101719">
+  <meta name="description" content="A collection of customisable, event-driven simulation games.">
+  <title>SIMULATORS — Goobleh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="wordmark" href="index.html"><span class="wordmark-mark">G.</span> SIMULATORS</a>
+      <nav><a class="nav-link active" href="#simulators">SIMULATORS</a><a class="nav-link" href="#about">ABOUT</a><button class="account-button" id="accountButton">ACCOUNT <span>↗</span></button></nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse"></span> A COLLECTION OF SIMULATION GAMES</p>
+          <h1>MAKE A CAST.<br><span>LET IT PLAY OUT.</span></h1>
+          <p class="hero-description">Build your world, put your characters into it, and watch the story unfold. Every season is yours to shape.</p>
+          <a class="primary-button" href="#simulators">EXPLORE SIMULATORS <span>↓</span></a>
+        </div>
+        <div class="hero-art" aria-label="Abstract mountain landscape">
+          <div class="sun"></div><div class="mountain mountain-back"></div><div class="mountain mountain-front"></div>
+          <div class="hero-art-label"><span>SIMULATION NO. 001</span><strong>THE CLIMB</strong></div>
+          <div class="coordinates">46°51' N<br>09°31' E</div>
+        </div>
+        <div class="hero-index"><span>01</span><span>BUILT FOR THE UNPREDICTABLE</span><span>SCROLL TO EXPLORE ↓</span></div>
+      </section>
+      <section class="simulator-section" id="simulators">
+        <div class="section-heading"><div><p class="eyebrow">THE COLLECTION / 001—∞</p><h2>CHOOSE YOUR SIMULATION.</h2></div><p class="section-note">Different worlds. Different rules.<br>One place to play them all.</p></div>
+        <a class="sim-card peak-card" href="peak/index.html">
+          <div class="sim-card-art"><div class="card-sun"></div><div class="card-ridge ridge-one"></div><div class="card-ridge ridge-two"></div><span class="card-number">001</span><span class="card-status"><i></i> IN DEVELOPMENT</span></div>
+          <div class="sim-card-info"><div><p class="eyebrow">SURVIVAL / SOCIAL SIMULATION</p><h3>PEAK</h3><p class="sim-description">A group of climbers. Six biomes. One summit. Build your cast, shape the route, and find out who makes it to the top.</p></div><span class="card-arrow">↗</span></div>
+        </a>
+        <div class="coming-grid"><div class="coming-card"><span>002 / UNANNOUNCED</span><strong>ANOTHER WORLD<br>IS COMING.</strong><small>IN THE WORKS</small></div><div class="coming-card"><span>003 / UNANNOUNCED</span><strong>YOUR NEXT<br>SIMULATION.</strong><small>IN THE WORKS</small></div></div>
+      </section>
+      <section class="about-section" id="about"><p class="eyebrow">ONE PLATFORM. MANY POSSIBILITIES.</p><h2>YOUR CAST.<br>YOUR RULES.<br><span>YOUR STORY.</span></h2><p>Each simulator has its own setting, systems and surprises. Create a season, customise the details, and let the simulation take it from there.</p></section>
+    </main>
+    <footer><a class="wordmark" href="index.html"><span class="wordmark-mark">G.</span> SIMULATORS</a><span>AN INDEPENDENT SIMULATION PROJECT</span><span>© 2026</span></footer>
+  </div>
+  <div class="modal-backdrop hidden" id="accountModal"><div class="account-modal"><button class="modal-close" id="closeModal" aria-label="Close">×</button><p class="eyebrow">YOUR SIMULATOR PROFILE</p><h2>ACCOUNT ACCESS</h2><p>Accounts and cloud season storage are being connected. You can explore the project while this is being set up.</p><span class="modal-status">ACCOUNT SYSTEM — COMING SOON</span></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
