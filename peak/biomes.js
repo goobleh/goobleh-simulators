@@ -1,1 +1,34 @@
-const draft=JSON.parse(sessionStorage.getItem("peakDraft")||"null");if(!draft){window.location.replace("index.html");}else{const descriptions={second:{tropics:["TROPICS","A dense, humid stretch of wilderness."],roots:["ROOTS","A tangled world of ancient growth and hidden paths."]},third:{mesa:["MESA","An exposed landscape of stone and heat."],alpine:["ALPINE","A cold, high-altitude route with little shelter."]},fourth:{gloom:["GLOOM","A dark, unsettling passage through the mountain."],caldera:["CALDERA","A harsh volcanic basin shaped by heat and ash."]}};function render(){for(const slot of ["second","third","fourth"]){const value=draft.route[slot];document.getElementById(slot+"Title").textContent=descriptions[slot][value][0];document.getElementById(slot+"Description").textContent=descriptions[slot][value][1];document.querySelectorAll('[data-slot="'+slot+'"]').forEach(button=>button.classList.toggle("selected",button.dataset.value===value));}draft.route.fifth=draft.route.fourth==="gloom"?"citadel":"kiln";document.getElementById("fifthTitle").textContent=draft.route.fifth==="citadel"?"THE CITADEL":"THE KILN";document.getElementById("fifthDescription").textContent=draft.route.fifth==="citadel"?"The route through the ancient stronghold.":"A furnace-like final trial beneath the summit."; }document.querySelectorAll(".biome-choice").forEach(button=>button.addEventListener("click",()=>{draft.route[button.dataset.slot]=button.dataset.value;render()}));document.getElementById("saveRoute").addEventListener("click",()=>{sessionStorage.setItem("peakDraft",JSON.stringify(draft));alert("Route saved! The next step will be cast creation.");});render();}
+const storageKey="peakDraft";
+const saveMessage=document.getElementById("saveMessage");
+let draft;
+try{draft=JSON.parse(sessionStorage.getItem(storageKey)||"null");}catch{draft=null;}
+if(!draft){
+  window.location.replace("index.html");
+}else{
+  draft.route=draft.route||{first:"shore",second:"tropics",third:"mesa",fourth:"gloom",fifth:"citadel",final:"the-peak"};
+  const fifthTitle=document.getElementById("fifthTitle");
+  const fifthDescription=document.getElementById("fifthDescription");
+  function render(){
+    document.querySelectorAll(".choice").forEach(button=>{
+      const selected=draft.route[button.dataset.slot]===button.dataset.value;
+      button.classList.toggle("selected",selected);
+      button.setAttribute("aria-pressed",String(selected));
+    });
+    const isGloom=draft.route.fourth==="gloom";
+    draft.route.fifth=isGloom?"citadel":"kiln";
+    fifthTitle.textContent=isGloom?"The Citadel":"The Kiln";
+    fifthDescription.textContent=isGloom?"Automatically paired with Gloom.":"Automatically paired with Caldera.";
+  }
+  document.querySelectorAll(".choice").forEach(button=>{
+    button.addEventListener("click",()=>{
+      draft.route[button.dataset.slot]=button.dataset.value;
+      saveMessage.textContent="";
+      render();
+    });
+  });
+  document.getElementById("saveRoute").addEventListener("click",()=>{
+    sessionStorage.setItem(storageKey,JSON.stringify(draft));
+    saveMessage.textContent="Route saved for this season.";
+  });
+  render();
+}
